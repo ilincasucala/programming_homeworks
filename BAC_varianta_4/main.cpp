@@ -1,15 +1,18 @@
 #include <iostream>
-#include<fstream>
+#include <fstream>
+
 using namespace std;
 ifstream f("BAC.TXT");
-//ofstream g("date.out");
+
 int main()
 {
     int a,nr,cont=1,b;
     a = 0;
 
+	/* File  not empty */
     if ( f >> a )    //(bool)(f >> a) == 0
     {
+		/* Read one number at a time from file f */
         while( f>>nr )
         {
             b = a;
@@ -23,20 +26,19 @@ int main()
             /* a!= b*/
             else
             {
-
                 cout<<b<<" "<<cont<<" ";
                 cont=1;
             }
 
         }
 
+		/* Print count also for last number */
         cout<<a<<" "<<cont;
     }
 
-    /* File not empty */
+    /* File empty */
     else
     {
-
         cout << "Fisierul este gol";
     }
 
