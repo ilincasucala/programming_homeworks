@@ -33,43 +33,47 @@ int main()
     /** Facem uppercase la prima litera a fiecarei propozitii */
 
     //ana are mere?! Ea merge la piata? ea merge la piata?
-	
-	/* Facem mare prima litera, ea nu are un semn de punctuatie inainte */
+    
+    /* Facem mare prima litera, ea nu are un semn de punctuatie inainte */
     c[0]=toupper(c[0]);
-	
-	/* Cautam caracter ca caracter */
+    
+    /* Cautam caracter ca caracter */
     for(int i=0;i<l;i++)
     {
-		/* Cautem un semn de punctuatie */
+        /* Cautem un semn de punctuatie */
         if(c[i]=='.' || c[i]=='?' || c[i]=='!')
         {
             //c[i+1]=toupper(c[i+1]);
             j=i;
             ok=0;
-			
-			/* Cautam urmatoarea litera de dupa semnul de punctuatie gasit */
-			/* E posibil ca un semn sa fie combinat eg. '?!!', sau sa fie spatii dupa semn */
+            
+            /* Cautam urmatoarea litera de dupa semnul de punctuatie gasit */
+            /* E posibil ca un semn sa fie combinat eg. '?!!', sau sa fie spatii dupa semn */
             while(j<l && ok==0)
             {
-				
-				/* Daca am gasit o litera dupa semnul de punctuatie*/
+                
+                /* Daca am gasit o litera dupa semnul de punctuatie*/
                 if((tolower(c[j])>='a') && (tolower(c[j])<='z'))
                 {
-					/* Facem majuscula litera gasita. Ne oprim din cautat litere. */
+                    /* Facem majuscula litera gasita. Ne oprim din cautat litere. */
                     c[j]=toupper(c[j]);
                     ok=1;
                 }
-				
-				/* Inca nu am gasit o litera dupa semnul de punctuatie */
+                
+                /* Inca nu am gasit o litera dupa semnul de punctuatie */
                 else 
-				{
-					/* Cautam mai departe */
-					j++;
-				}
+                {
+                    /* Cautam mai departe */
+                    j++;
+                }
             }
         }
-    }
+    
+
     //for(int i=0;i<l;i++)
+    
+    /* Afisare rezultat */
     cout<<c;
-     return 0;
+
+    return 0;
 }
